@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewTest.DataPage">
+    <StackLayout Orientation="Vertical" HeightRequest="200">
+        <ListView x:Name="EmployeeView" ItemsSource="{Binding DisplayList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Show/Hide Filter" Clicked="ShowHideClicked"></Button>
+        <StackLayout x:Name="FilterLayout" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Clicked="AllClicked" Text="All" HorizontalOptions="Start"></Button>
+            <Button Clicked="XamarinClicked" Text="Xamarin" HorizontalOptions="Start"></Button>
+            <Button Clicked="MicrosoftClicked" Text="Windows" HorizontalOptions="End"></Button>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>
